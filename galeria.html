@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeria BMW</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <img src="img/logo-bmw.png" class="bmw-logo" alt="BMW Logo">
+    <script src="bmw.js"></script>
+    <main>
+	<a href="index.html" class="back-to-home">Powrót do Strony Głównej</a>
+        <h1>Galeria BMW</h1>
+        <div class="gallery-container">
+    <div class="gallery-item" onclick="openModal();currentSlide(1)">
+        <img src="img/gallery1.jpg" alt="BMW Model 1" style="width:100%">
+    </div>
+    <div class="gallery-item" onclick="openModal();currentSlide(2)">
+        <img src="img/gallery2.jpg" alt="BMW Model 2" style="width:100%">
+    </div>
+    <div class="gallery-item" onclick="openModal();currentSlide(3)">
+        <img src="img/gallery3.jpg" alt="BMW Model 3" style="width:100%">
+    </div>
+    <div class="gallery-item" onclick="openModal();currentSlide(4)">
+        <img src="img/gallery4.jpg" alt="BMW Model 4" style="width:100%">
+    </div>
+    <div class="gallery-item" onclick="openModal();currentSlide(5)">
+        <img src="img/gallery5.jpg" alt="BMW Model 5" style="width:100%">
+    </div>
+</div>
+
+<div id="galleryModal" class="modal">
+    <span class="close cursor" onclick="closeModal()">&times;</span>
+    <div class="modal-content">
+        <div class="mySlides">
+            <img src="img/gallery1.jpg" style="width:100%">
+        </div>
+        <div class="mySlides">
+            <img src="img/gallery2.jpg" style="width:100%">
+        </div>
+        <div class="mySlides">
+            <img src="img/gallery3.jpg" style="width:100%">
+        </div>
+        <div class="mySlides">
+            <img src="img/gallery4.jpg" style="width:100%">
+        </div>
+        <div class="mySlides">
+            <img src="img/gallery5.jpg" style="width:100%">
+        </div>
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+</div>
+
+    </main>
+
+     <footer>
+	<div class="footer-spacer"></div>
+	<div class="footer-content">
+	<p>&copy; 2024 BMW - Strona o Motoryzacji</p>
+	</div>
+	<div id="datetime" class="datetime"></div>
+	<script src="script_time.js"></script>
+    </footer>
+    <script>
+	function openModal() {
+  document.getElementById('galleryModal').style.display = "block";
+}
+
+function closeModal() {
+  document.getElementById('galleryModal').style.display = "none";
+}
+
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+  }
+  slides[slideIndex-1].style.display = "block";
+}
+    </script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator kredytu</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <img src="img/logo-bmw.png" class="bmw-logo" alt="BMW Logo">
+    <script src="bmw.js"></script>
+    <main>
+	<a href="index.html" class="back-to-home">Powrót do Strony Głównej</a>
+        <h1>Kalkulator kredytu BMW</h1>
+        <form id="credit-form">
+            <div class="form-group">
+                <label for="car-model">Wybierz model auta:</label>
+                <select id="car-model" name="car-model">
+                    <option value="bmw3">BMW Seria 3</option>
+                    <option value="m5">BMW M5 Competition</option>
+                    <option value="m3">BMW M3 Touring</option>
+                    <option value="x6">BMW X6 Competition</option>
+                    <option value="e36">BMW E36</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="car-price">Cena auta (PLN):</label>
+                <input type="number" id="car-price" name="car-price" required>
+            </div>
+            <div class="form-group">
+                <label for="down-payment">Pierwsza wpłata (min. 10% ceny auta):</label>
+                <input type="number" id="down-payment" name="down-payment" required>
+            </div>
+            <div class="form-group">
+                <label for="loan-terms">Okres kredytu (miesiące):</label>
+                <input type="number" id="loan-terms" name="loan-terms" required>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="calculate-button">Oblicz ratę</button>
+            </div>
+            <div class="form-group">
+                <p id="monthly-payment">Miesięczna rata: <span></span></p>
+            </div>
+        </form>
+    </main>
+     <footer>
+	<div class="footer-spacer"></div>
+	<div class="footer-content">
+	<p>&copy; 2024 BMW - Strona o Motoryzacji</p>
+	</div>
+	<div id="datetime" class="datetime"></div>
+	<script src="script_time.js"></script>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
